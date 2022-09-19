@@ -1,7 +1,7 @@
 pipeline{
 	agent {
 		node {
-			label"label"
+			label "master"
 			customWorkspace "/mnt/docker"
 		}
 	}	
