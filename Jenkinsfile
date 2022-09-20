@@ -8,20 +8,20 @@ pipeline{
 		stages {
 			stage ('create container') {
 				steps {
-			
-				sh "docker run --name container3 -itdp 8080:80 httpd"
+					/*sh  "docker kill container3"
+					sh "docker rm container3"*/
+				sh "docker run --name container3 -itdp 200:80 httpd"
+				
 				}
 			}
-			
-			
-			stage {
+			stage ('deploy index') {
 				steps {
-				dir ('/mnt/docker/22q3') {
+					sh "chmod -R 777 index.html"
+					sh "docker cp index.html container2:/usr/local/apache2/htdocs"
 					
-					sh "docker cp index.html container3:/usr/local/apache2/htdocs"
-					
-					}
 				}	
 			}
+				
+		
 		}
 }
