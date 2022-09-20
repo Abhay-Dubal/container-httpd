@@ -6,10 +6,10 @@ pipeline{
 		}
 	}	
 		stages {
-			stage ('create container'){
+			stage ('create container') {
 				steps {
 			
-				sh "docker run --name container-3 -itdp 8080:80 httpd"
+				sh "docker run --name container3 -itdp 8080:80 httpd"
 				}
 			}
 			
@@ -18,7 +18,7 @@ pipeline{
 				steps {
 				dir ('/mnt/docker/22q3') {
 					
-					sh "docker cp index.html container-3:/usr/local/apache2/htdocs"
+					sh "docker cp index.html container3:/usr/local/apache2/htdocs"
 					
 					}
 				}	
