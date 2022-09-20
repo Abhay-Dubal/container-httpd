@@ -6,10 +6,10 @@ pipeline{
 		}
 	}	
 		stages {
-			stage ('create container-2'){
+			stage ('create container-2') {
 				steps {
 				
-				sh "docker run --name container-2 -itdp 90:80 httpd"
+				sh "docker run --name container2 -itdp 90:80 httpd"
 				
 				}
 			}
@@ -19,7 +19,7 @@ pipeline{
 				steps {
 				dir ('/mnt/docker/22q2') {
 					
-					sh "docker cp index.html container-2:/usr/local/apache2/htdocs"
+					sh "docker cp index.html container2:/usr/local/apache2/htdocs"
 					
 					}
 				}	
