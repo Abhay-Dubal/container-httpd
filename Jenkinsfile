@@ -12,7 +12,7 @@ pipeline{
 				
 				}
 			}
-			stage {
+			stage ('deploy index') {
 				steps {
 				
 					sh "docker cp index.html container1:/usr/local/apache2/htdocs"
