@@ -14,10 +14,9 @@ pipeline{
 			}
 			stage {
 				steps {
-				dir ('/mnt/docker/22q1') {
+				
 					sh "docker cp index.html container1:/usr/local/apache2/htdocs"
 					
-					}
 				}	
 			}
 				
