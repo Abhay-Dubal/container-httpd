@@ -2,7 +2,7 @@ pipeline{
 	agent {
 		node {
 			label "master"
-			customWorkspace "/mnt/docker"
+			customWorkspace "/mnt/docker/22q2"
 		}
 	}	
 		stages {
